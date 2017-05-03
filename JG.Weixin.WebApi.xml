@@ -1,0 +1,564 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JG.Weixin.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:JG.Weixin.WebApi.HangfireConfig.DeployHangfire(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            加载配置文件
+            </summary>
+            <param name="services"></param>
+            <param name="Configuration"></param>
+        </member>
+        <member name="M:JG.Weixin.WebApi.HangfireConfig.UseHangfire(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            启动Hangfire
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:JG.Weixin.WebApi.HangfireConfig.StartBoot">
+            <summary>
+            开机任务
+            </summary>
+        </member>
+        <member name="M:JG.Weixin.WebApi.SwaggerGenConfig.DeploySwaggerGen(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            配置api说明文档
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:JG.Weixin.WebApi.ValidateModelAttribute">
+            <summary>
+            模型验证
+            </summary>
+        </member>
+        <member name="T:JG.Weixin.WebApi.ValidateSteward">
+            <summary>
+            验证是否为乘务员
+            </summary>
+        </member>
+        <member name="T:JG.Weixin.WebApi.Controllers.CarPoolController">
+            <summary>
+            拼车相关业务
+            </summary>
+            
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.CarPoolController.ListPassenger(JG.Weixin.WebApi.ListPassengerVM)">
+            <summary>
+            获取个人或默认的乘客行程列表
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.CarPoolController.GetPassenger(System.Int64)">
+            <summary>
+            获取指定id的乘客行程列表
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.CarPoolController.ListDre(JG.Weixin.WebApi.ListPassengerVM)">
+            <summary>
+            获取个人或默认的司机行程列表
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.CarPoolController.GetDre(System.Int64)">
+            <summary>
+            获取制定id的司机行程
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.CarPoolController.PublishTravel(JG.Weixin.WebApi.Models.PublishTravelVM)">
+            <summary>
+            发布出行计划 (司机)
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.CarPoolController.PublishRoute(JG.Weixin.WebApi.Models.PublishTravelVM)">
+            <summary>
+            发布线路 （乘客）
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.MemberController.GetOfflineUsr(JG.Weixin.WebApi.Models.OfflineUsrVM)">
+            <summary>
+            查看线下用户
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.MemberController.CashApply(JG.Weixin.WebApi.Models.CashApplyVM)">
+            <summary>
+            提现申请
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OAuth2Controller.Index(System.String)">
+            <summary>
+            获取微信的授权地址，如果没有登陆(或登陆失效),就让用户跳转到这个页面
+            </summary>
+            <param name="returnUrl">用户尝试进入的需要登录的页面</param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OAuth2Controller.MINALogin(JG.Weixin.WebApi.Models.MINALoginVM)">
+            <summary>
+            小程序登陆
+            </summary>
+            <param name="Code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OAuth2Controller.MINAUpdateUser(JG.Weixin.WebApi.Models.MINAUpdateUserVM)">
+            <summary>
+            小程序专用更新用户信息
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OrderController.Create(JG.Weixin.WebApi.Models.CreateOrderVM)">
+            <summary>
+            下单
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OrderController.List(JG.Weixin.WebApi.Models.ListOrderVM)">
+            <summary>
+            列出用户订单
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OrderController.ListRefund(JG.Weixin.WebApi.Models.ListRefundVM)">
+            <summary>
+            获取退款申请记录
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OrderController.Get(JG.Weixin.WebApi.Models.GetOrderVM)">
+            <summary>
+            获取订单的详情
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OrderController.PayOrder(JG.Weixin.WebApi.Models.PayOrderVM)">
+            <summary>
+            支付订单
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OrderController.Cancel(JG.Weixin.WebApi.Models.CancelOrderVM)">
+            <summary>
+            取消订单
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OrderController.Refund(JG.Weixin.WebApi.Models.RefundOrderVM)">
+            <summary>
+            申请订单退款
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.OrderController.Notify">
+            <summary>
+            支付结果异步通知
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.PassengerController.Add(JG.Weixin.WebApi.Models.AddPasserVM)">
+            <summary>
+            增加乘客信息,返回乘客的id
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.PassengerController.Delete(System.Int64,System.Int64)">
+            <summary>
+            删除乘客信息
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.PassengerController.Modify(JG.Weixin.WebApi.Models.ModifyPasserVM)">
+            <summary>
+            修改乘客信息
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.RebateController.GetQrcodeRebate(System.Int32)">
+            <summary>
+            查看扫码关注的优惠券
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.RebateController.ReceiveQrcodeRebate(JG.Weixin.WebApi.ReceiveQrcodeRebateVM)">
+            <summary>
+            领取扫码关注的优惠券
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.RebateController.GetCodeInfo(System.String)">
+            <summary>
+            获取优惠码信息
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.StewardController.Register(System.Int64)">
+            <summary>
+            注册成为乘务员
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.StewardController.GetOrder(JG.Weixin.WebApi.Models.GetOrderVM)">
+            <summary>
+            获取乘客订单
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.StewardController.GetOrderByCode(System.String)">
+            <summary>
+            使用验证码获取订单详情，有可能有多个
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.StewardController.ConfirmRide(JG.Weixin.WebApi.Models.ConfirmRideVM)">
+            <summary>
+            确认乘客
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.Index">
+            <summary>
+            首页，获取默认的出发地和到达地
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.GetStartPoints">
+            <summary>
+            得到上车点枚举
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.ChildArea(System.Int32)">
+            <summary>
+            获取指定id下属行政区域
+            </summary>
+            <param name="parentid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.NearestStartPoints(JG.Weixin.WebApi.Models.NearestStartPointsVM)">
+            <summary>
+            获取最近的上车点位置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.GetEndPoints(System.Int64)">
+            <summary>
+            根据上车点城市id得到下车点枚举
+            </summary>
+            <param name="SCityId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.GetPlaceInfo(System.Int64)">
+            <summary>
+            获取地点的信息
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.GetCityAndPoints">
+            <summary>
+            得到所有城市和站点
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.GetCities">
+            <summary>
+            得到城市枚举
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.GetLines(JG.Weixin.WebApi.Models.ListLinesVM)">
+            <summary>
+            根据（上车点id或发车城市id）和（下车点id或目的城市id）筛选线路
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.UserRelevant(System.Int64)">
+            <summary>
+            获取用户相关的乘客信息和优惠
+            </summary>
+            <param name="UsirId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.UpdateUserInfo(JG.Weixin.WebApi.Models.UpdateInfoVM)">
+            <summary>
+            更新用户个人信息
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.TransportController.CheckRebateCode(System.String)">
+            <summary>
+            领取优惠码
+            </summary>
+            <param name="Code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.WxBasisController.Get(Senparc.Weixin.MP.Entities.Request.PostModel,System.String)">
+            <summary>
+            处理微信消息,请勿调用
+            </summary>
+            <param name="postModel"></param>
+            <param name="echostr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.Controllers.WxBasisController.Post(Senparc.Weixin.MP.Entities.Request.PostModel)">
+            <summary>
+            处理微信消息,请勿调用
+            </summary>
+            <param name="postModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.CustomMessageContext.CustomMessageContext_MessageContextRemoved(System.Object,Senparc.Weixin.Context.WeixinContextRemovedEventArgs{Senparc.Weixin.MP.Entities.IRequestMessageBase,Senparc.Weixin.MP.Entities.IResponseMessageBase})">
+            <summary>
+            当上下文过期，被移除时触发的时间
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:JG.Weixin.WebApi.CustomMessageHandler">
+            <summary>
+            自定义MessageHandler
+            把MessageHandler作为基类，重写对应请求的处理方法
+            </summary>
+        </member>
+        <member name="F:JG.Weixin.WebApi.CustomMessageHandler.TemplateMessageCollection">
+            <summary>
+            模板消息集合（Key：checkCode，Value：OpenId）
+            </summary>
+        </member>
+        <member name="M:JG.Weixin.WebApi.CustomMessageHandler.OnTextRequest(Senparc.Weixin.MP.Entities.RequestMessageText)">
+            <summary>
+            处理文字请求
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.CustomMessageHandler.OnLocationRequest(Senparc.Weixin.MP.Entities.RequestMessageLocation)">
+            <summary>
+            处理位置请求
+            </summary>
+            <param name="requestMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.CustomMessageHandler.OnImageRequest(Senparc.Weixin.MP.Entities.RequestMessageImage)">
+            <summary>
+            处理图片请求
+            </summary>
+            <param name="requestMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.CustomMessageHandler.OnVoiceRequest(Senparc.Weixin.MP.Entities.RequestMessageVoice)">
+            <summary>
+            处理语音请求
+            </summary>
+            <param name="requestMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.CustomMessageHandler.OnVideoRequest(Senparc.Weixin.MP.Entities.RequestMessageVideo)">
+            <summary>
+            处理视频请求
+            </summary>
+            <param name="requestMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.CustomMessageHandler.OnLinkRequest(Senparc.Weixin.MP.Entities.RequestMessageLink)">
+            <summary>
+            处理链接消息请求
+            </summary>
+            <param name="requestMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="M:JG.Weixin.WebApi.CustomMessageHandler.OnEventRequest(Senparc.Weixin.MP.Entities.IRequestMessageEventBase)">
+            <summary>
+            处理事件请求（这个方法一般不用重写，这里仅作为示例出现。除非需要在判断具体Event类型以外对Event信息进行统一操作
+            </summary>
+            <param name="requestMessage"></param>
+            <returns></returns>
+        </member>
+        <member name="P:JG.Weixin.WebApi.WeixinResult.Content">
+            <summary>
+            获取ContentResult中的Content或IMessageHandler中的ResponseDocument文本结果。
+            一般在测试的时候使用。
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.ListRefundVM.Status">
+            <summary>
+            -1.不分状态
+            0.审核不通过
+            1.待审核
+            2.审核通过待退款
+            3.已退款
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.UsrId">
+            <summary>
+            用户id,不需要填写，会从token中获取
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.LineId">
+            <summary>
+            线路Id
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.SPointId">
+            <summary>
+            上车点Id
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.EPointId">
+            <summary>
+            下车点Id
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.Date">
+            <summary>
+            乘车日期
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.LinkmanId">
+            <summary>
+            联系人手机
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.PassengerIds">
+            <summary>
+            乘客信息
+            </summary>
+            
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.RebateId">
+            <summary>
+            优惠码
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.StartAddress">
+            <summary>
+            最终详细的上车点
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.CreateOrderVM.JourneyRmk">
+            <summary>
+            旅程备注
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.ListOrderVM.Type">
+            <summary>
+            0.全部订单
+            1.未支付(全部)
+            2.已支付
+            3.待出行(全部)
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.PayOrderVM.OrderId">
+            <summary>
+            订单Id
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.PayOrderVM.UsrId">
+            <summary>
+            用户Id
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.PayOrderVM.Type">
+            <summary>
+            0.微信公众号支付
+            1.微信小程序支付
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.PublishTravelVM.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.PublishTravelVM.Seat">
+            <summary>
+            座位
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.GenerateOrderVM.Name">
+            <summary>
+            乘客姓名
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.GenerateOrderVM.Mobile">
+            <summary>
+            乘客手机号
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.GenerateOrderVM.LineId">
+            <summary>
+            线路Id
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.GenerateOrderVM.SPointId">
+            <summary>
+            上车点Id
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.GenerateOrderVM.EPointId">
+            <summary>
+            下车点Id
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.GenerateOrderVM.Date">
+            <summary>
+            乘车日期
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.ListLinesVM.SPoint">
+            <summary>
+            上车点或发车城市
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.ListLinesVM.EPoint">
+            <summary>
+            下车点或目的城市
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.Models.ModifyPasserVM.Id">
+            <summary>
+            乘车用户id
+            </summary>
+        </member>
+        <member name="P:JG.Weixin.WebApi.ListPassengerVM.UsrId">
+            <summary>
+            用户id，可不填
+            </summary>
+        </member>
+    </members>
+</doc>

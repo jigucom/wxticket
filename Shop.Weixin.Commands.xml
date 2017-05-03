@@ -1,0 +1,402 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shop.Weixin.Commands</name>
+    </assembly>
+    <members>
+        <member name="M:Shop.Weixin.Commands.CarpoolMatchEvent.MatchDriverList(Shop.Weixin.Commands.CarpoolMatchRequest)">
+            <summary>
+            匹配同一个出发和到达城市同一天的司机行程
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.Commands.CarpoolMatchEvent.MatchPassengerList(Shop.Weixin.Commands.CarpoolMatchRequest)">
+            <summary>
+            匹配同一个出发和到达城市同一天的乘客行程
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.Commands.CarpoolMatchEvent.SenMessageToDriver(System.String,Shop.Weixin.Commands.MatchDriverModel)">
+            <summary>
+            发送消息给司机
+            </summary>
+            <param name="token"></param>
+            <param name="driver"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.Commands.CarpoolMatchEvent.SenMessageToPass(System.String,Shop.Weixin.Commands.MatchPassengerModel)">
+            <summary>
+            发送消息给乘客
+            </summary>
+            <param name="token"></param>
+            <param name="driver"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shop.Weixin.Commands.CarpoolMatchRequest">
+            <summary>
+            行程匹配请求
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.Id">
+            <summary>
+            行程id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.UsrId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.Spoint">
+            <summary>
+            出发地名称
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.SpointLocation">
+            <summary>
+            出发地经纬度
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.Spointid">
+            <summary>
+            出发地的高德Id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.Epoint">
+            <summary>
+            目的地名称
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.EpointLocation">
+            <summary>
+            终点地经纬度
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.EpointId">
+            <summary>
+            终点的高德Id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.BoardTime">
+            <summary>
+            出发时间
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.Phone">
+            <summary>
+            联系电话
+            </summary>
+            
+        </member>
+        <member name="P:Shop.Weixin.Commands.CarpoolMatchRequest.Num">
+            <summary>
+            乘客数量
+            </summary>
+            
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchDriverModel.Id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchDriverModel.UsrId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchDriverModel.Spoint">
+            <summary>
+            出发地名称
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchDriverModel.Epoint">
+            <summary>
+            目的地名称
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchDriverModel.BoardTime">
+            <summary>
+            发车时间
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchDriverModel.Ctime">
+            <summary>
+            发车时间
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchDriverModel.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchDriverModel.UserInfo">
+            <summary>
+            司机的用户信息
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchPassengerModel.Id">
+            <summary>
+            行程id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchPassengerModel.UsrId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchPassengerModel.Spoint">
+            <summary>
+            出发地名称
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchPassengerModel.Epoint">
+            <summary>
+            目的地名称
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchPassengerModel.BoardTime">
+            <summary>
+            出发时间
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchPassengerModel.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.MatchPassengerModel.Ctime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:Shop.Weixin.Commands.ConfirmRide">
+            <summary>
+            确认乘车
+            </summary>
+        </member>
+        <member name="T:Shop.Weixin.Commands.GainRebateCode">
+            <summary>
+            领取优惠码的优惠信息
+            </summary>
+        </member>
+        <member name="M:Shop.Weixin.Commands.HRQrcodeEvent.HRQrCodeHandle(Shop.Weixin.Domain.RawRabbit.PrivyQrcodeEvenRequest)">
+            <summary>
+            获取HR二维码
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:Shop.Weixin.Commands.HRQrcodeEvent.PostImageMsgAsync(System.String,System.String,System.String)">
+            <summary>
+            发送图片消息
+            </summary>
+            <param name="token"></param>
+            <param name="openid"></param>
+            <param name="mediaId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.Commands.HRQrcodeEvent.HRQrCodeRecordMsg(Shop.Weixin.Commands.RegisterByOpenIdRequest)">
+            <summary>
+            触发通过HR二维码的消息通知
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Shop.Weixin.Commands.InputModel.CarPool.IPublishTravel.Phone">
+            <summary>
+            手机号
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.InputModel.CarPool.IPublishTravel.Seat">
+            <summary>
+            座位
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.InputModel.CarPool.IPublishTravel.RemainingSeat">
+            <summary>
+            剩余座位
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.ICreateOrderVM.RebateId">
+            <summary>
+            优惠id,可能是优惠码，也可能是优惠券，红包之类的
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.ICreateOrderVM.StartAddress">
+            <summary>
+            具体的乘车地点
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.ICreateOrderVM.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.ICreateOrderVM.JourneyRmk">
+            <summary>
+            旅程备注
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.QueryOrderExpireVM.ExpireMinutes">
+            <summary>
+            过期时间，单位分钟
+            </summary>
+        </member>
+        <member name="M:Shop.Weixin.Commands.OrderExpireMission.ExpireMessage(Shop.Weixin.Commands.GenerateOrderVM,System.String)">
+            <summary>
+            微信模板消息
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.Commands.OrderExpireMission.IsWxPay(System.String)">
+            <summary>
+            判断是否已经支付，已支付则更新订单状态并插入支付记录
+            </summary>
+            <param name="orderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.Commands.OrderMission.GenerateOrderMessage(Shop.Weixin.Commands.GenerateOrderVM,System.String)">
+            <summary>
+            微信模板消息
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="T:Shop.Weixin.Commands.PendingOrderEvent">
+            <summary>
+            待处理订单提醒
+            </summary>
+        </member>
+        <member name="M:Shop.Weixin.Commands.PendingOrderEvent.PostPendingMsgAsync(System.String,Shop.Weixin.Domain.ValueToObject.View_Order)">
+            <summary>
+            发送待处理订单的模板消息
+            </summary>
+            <param name="openid"></param>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.Commands.CreateOrder.CheckParamErro(System.Int32,System.Int32,System.Int64)">
+            <summary>
+            对订单的输入参数进行检查,有效则返回空值
+            </summary>
+            <param name="dayCount"></param>
+            <param name="passNum"></param>
+            <param name="lineId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.Commands.CreateOrder.SupplyTicke(Shop.Weixin.Domain.SupplyTicketVM)">
+            <summary>
+            恢复票数
+            </summary>
+            <param name="ticket"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.Commands.SpreadQrcodeEvent.PrivyQrCodeHandle(Shop.Weixin.Domain.RawRabbit.PrivyQrcodeEvenRequest)">
+            <summary>
+            处理个人二维码推广
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:Shop.Weixin.Commands.SpreadQrcodeEvent.PostImageMsgAsync(System.String,System.String,System.String)">
+            <summary>
+            发送图片消息
+            </summary>
+            <param name="token"></param>
+            <param name="openid"></param>
+            <param name="mediaId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Shop.Weixin.Commands.WxUserInfo">
+            <summary>
+            从微信获取的返回结果
+            </summary>
+        </member>
+        <member name="T:Shop.Weixin.Commands.WechatEvent">
+            <summary>
+            微信事件处理
+            </summary>
+        </member>
+        <member name="M:Shop.Weixin.Commands.WechatEvent.ScanReplyMsg(System.Int32,System.String,System.String,System.Int64,System.Xml.Linq.XDocument,System.Int16)">
+            <summary>
+            扫码回复消息
+            </summary>
+            <param name="toUserName"></param>
+            <param name="openId"></param>
+            <param name="createTime"></param>
+            <param name="doc"></param>
+            <param name="Type">0.第一次关注1.已关注</param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.Commands.WechatEvent.HandleScanRebateJob(Shop.Weixin.Commands.ScanRebateRequest)">
+            <summary>
+            处理优惠券任务
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Shop.Weixin.Commands.WechatEvent.RegisterUserByOpenIdJob(Shop.Weixin.Commands.RegisterByOpenIdRequest)">
+            <summary>
+            注册用户的任务
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Shop.Weixin.Commands.WechatEvent.WxTemplateJob(Shop.Weixin.Commands.WxTemplateRequest)">
+            <summary>
+            处理微信模板消息
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Shop.Weixin.Commands.WechatEvent.WxUnsubscribeJob(Shop.Weixin.Commands.WxUnsubscribeRequest)">
+            <summary>
+            处理用户取消关注任务
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Shop.Weixin.Commands.WechatEvent.ScanSubscribe(System.String,System.String,System.Int64,System.Xml.Linq.XDocument)">
+            <summary>
+            处理第一次扫码关注
+            </summary>
+        </member>
+        <member name="M:Shop.Weixin.Commands.WechatEvent.Scan(System.String,System.String,System.Int64,System.Xml.Linq.XDocument)">
+            <summary>
+            处理已关注的扫码
+            </summary>
+        </member>
+        <member name="M:Shop.Weixin.Commands.WechatEvent.HandleScanRebateRequestAsync(Shop.Weixin.Commands.ScanRebateRequest)">
+            <summary>
+            处理扫码关注的红包
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="T:Shop.Weixin.Commands.ScanSubscribeRequest">
+            <summary>
+            扫码关注触发事件
+            </summary>
+        </member>
+        <member name="T:Shop.Weixin.Commands.RegisterByOpenIdRequest">
+            <summary>
+            关注时触发的用户注册
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.RegisterByOpenIdRequest.OpenId">
+            <summary>
+            关注者的OpenId
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.RegisterByOpenIdRequest.QrcodeId">
+            <summary>
+            推广id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Commands.WxUnsubscribeRequest.OpenId">
+            <summary>
+            取消关注的openid
+            </summary>
+        </member>
+    </members>
+</doc>
