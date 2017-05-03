@@ -1,0 +1,452 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Shop.Weixin.QueryService</name>
+    </assembly>
+    <members>
+        <member name="M:Shop.Weixin.QueryService.CarPoolService.ShowPassengerAsync(Shop.Weixin.QueryService.IShowPassengerVM)">
+            <summary>
+            获取个人或默认的拼车行程列表
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.CarPoolService.GetPassengerAsync(System.Int64)">
+            <summary>
+            获取指定id的乘客行程
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.CarPoolService.GetDriverAsync(System.Int64)">
+            <summary>
+            获取指定id的司机行程
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.CarPoolService.ShowDriverAsync(Shop.Weixin.QueryService.IShowPassengerVM)">
+            <summary>
+            获取个人或默认的司机行程列表
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.CarPoolService.MatchDriverAsync(Shop.Weixin.QueryService.IMatchDriverVM)">
+            <summary>
+            匹配同一个出发和到达城市同一天的司机行程
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.CarPoolService.MatchPassengerAsync(Shop.Weixin.QueryService.IMatchPassengerVM)">
+            <summary>
+            匹配同一个出发和到达城市同一天的乘客行程
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.IRefundListVM.Status">
+            <summary>
+            -1.不分状态
+            0.审核不通过
+            1.待审核
+            2.审核通过待退款
+            3.已退款
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.IShowPassengerVM.EpointFuzzy">
+            <summary>
+            终点点名字模糊搜索
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.IShowPassengerVM.SpointFuzzy">
+            <summary>
+            起点名字模糊搜索
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.JwtIssuerOptions.Issuer">
+            <summary>
+            "iss" (Issuer) Claim
+            </summary>
+            <remarks>The "iss" (issuer) claim identifies the principal that issued the
+              JWT.  The processing of this claim is generally application specific.
+              The "iss" value is a case-sensitive string containing a StringOrURI
+              value.  Use of this claim is OPTIONAL.</remarks>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.JwtIssuerOptions.Subject">
+            <summary>
+            "sub" (Subject) Claim
+            </summary>
+            <remarks> The "sub" (subject) claim identifies the principal that is the
+              subject of the JWT.  The claims in a JWT are normally statements
+              about the subject.  The subject value MUST either be scoped to be
+              locally unique in the context of the issuer or be globally unique.
+              The processing of this claim is generally application specific.  The
+              "sub" value is a case-sensitive string containing a StringOrURI
+              value.  Use of this claim is OPTIONAL.</remarks>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.JwtIssuerOptions.Audience">
+            <summary>
+            "aud" (Audience) Claim
+            </summary>
+            <remarks>The "aud" (audience) claim identifies the recipients that the JWT is
+              intended for.  Each principal intended to process the JWT MUST
+              identify itself with a value in the audience claim.  If the principal
+              processing the claim does not identify itself with a value in the
+              "aud" claim when this claim is present, then the JWT MUST be
+              rejected.  In the general case, the "aud" value is an array of case-
+              sensitive strings, each containing a StringOrURI value.  In the
+              special case when the JWT has one audience, the "aud" value MAY be a
+              single case-sensitive string containing a StringOrURI value.  The
+              interpretation of audience values is generally application specific.
+              Use of this claim is OPTIONAL.</remarks>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.JwtIssuerOptions.NotBefore">
+            <summary>
+            "nbf" (Not Before) Claim (default is UTC NOW)
+            </summary>
+            <remarks>The "nbf" (not before) claim identifies the time before which the JWT
+              MUST NOT be accepted for processing.  The processing of the "nbf"
+              claim requires that the current date/time MUST be after or equal to
+              the not-before date/time listed in the "nbf" claim.  Implementers MAY
+              provide for some small leeway, usually no more than a few minutes, to
+              account for clock skew.  Its value MUST be a number containing a
+              NumericDate value.  Use of this claim is OPTIONAL.</remarks>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.JwtIssuerOptions.IssuedAt">
+            <summary>
+            "iat" (Issued At) Claim (default is UTC NOW)
+            </summary>
+            <remarks>The "iat" (issued at) claim identifies the time at which the JWT was
+              issued.  This claim can be used to determine the age of the JWT.  Its
+              value MUST be a number containing a NumericDate value.  Use of this
+              claim is OPTIONAL.</remarks>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.JwtIssuerOptions.ValidFor">
+            <summary>
+            Set the timespan the token will be valid for (default is 5 min/300 seconds)
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.JwtIssuerOptions.Expiration">
+            <summary>
+            "exp" (Expiration Time) Claim (returns IssuedAt + ValidFor)
+            </summary>
+            <remarks>The "exp" (expiration time) claim identifies the expiration time on
+              or after which the JWT MUST NOT be accepted for processing.  The
+              processing of the "exp" claim requires that the current date/time
+              MUST be before the expiration date/time listed in the "exp" claim.
+              Implementers MAY provide for some small leeway, usually no more than
+              a few minutes, to account for clock skew.  Its value MUST be a number
+              containing a NumericDate value.  Use of this claim is OPTIONAL.</remarks>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.JwtIssuerOptions.JtiGenerator">
+            <summary>
+            "jti" (JWT ID) Claim (default ID is a GUID)
+            </summary>
+            <remarks>The "jti" (JWT ID) claim provides a unique identifier for the JWT.
+              The identifier value MUST be assigned in a manner that ensures that
+              there is a negligible probability that the same value will be
+              accidentally assigned to a different data object; if the application
+              uses multiple issuers, collisions MUST be prevented among values
+              produced by different issuers as well.  The "jti" claim can be used
+              to prevent the JWT from being replayed.  The "jti" value is a case-
+              sensitive string.  Use of this claim is OPTIONAL.</remarks>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.JwtIssuerOptions.SigningCredentials">
+            <summary>
+            The signing key to use when generating tokens.
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.JwtIssuerOptions.SecretKey">
+            <summary>
+            加密字符串
+            </summary>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.MemberService.IsUserSub(System.Int64)">
+            <summary>
+            判断用户是否关注公众号
+            </summary>
+            <param name="usrid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.MemberService.CheckMobileBind(System.Int64)">
+            <summary>
+            判断用户是否已绑定过手机号
+            </summary>
+            <param name="usrid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.OrderList(Shop.Weixin.QueryService.IOrderListVM)">
+            <summary>
+            乘客获取订单列表
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.OrderDetail(Shop.Weixin.QueryService.IOrderDetailVM)">
+            <summary>
+            乘客获取订单详情
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.StewardGetOrderDetail(Shop.Weixin.QueryService.IOrderDetailVM)">
+            <summary>
+            乘务员获取订单详情
+            </summary>
+            <param name="view"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.GetDetailByVerifyCode(System.Int64,System.String)">
+            <summary>
+            根据验证码获取订单详情
+            </summary>
+            <param name="usrId"></param>
+            <param name="verifyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.HandleListShow(System.Collections.Generic.IEnumerable{Shop.Weixin.Domain.ValueToObject.UsrOrderList})">
+            <summary>
+            订单列表处理
+            </summary>
+            <param name="orderLists"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.HandleListShowUpdateJob(Shop.Weixin.QueryService.HandleListShowUpdateEvenRequest)">
+            <summary>
+            处理订单列表
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.HandlePassengersJob(Shop.Weixin.QueryService.HandlePassengersRequest)">
+            <summary>
+             获取订单详情中对乘客的处理
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.HandleListStatusExplain(System.Collections.Generic.List{Shop.Weixin.Domain.ValueToObject.UsrOrderList})">
+            <summary>
+            订单列表状态说明
+            </summary>
+            <param name="orderLists"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.HandleTitle(System.Int64)">
+            <summary>
+            乘车区间处理
+            </summary>
+            <param name="scheduleId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.HandleDetailShow(System.Collections.Generic.IEnumerable{Shop.Weixin.Domain.ValueToObject.View_Order})">
+            <summary>
+            订单详情处理
+            </summary>
+            <param name="orders"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.HandlePassengers(Shop.Weixin.Domain.ValueToObject.View_Order)">
+            <summary>
+            处理乘客信息，如计划服务器挂了，订单详情丢失时候
+            </summary>
+            <param name="order"></param>
+            <param name="vieworderRe"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.ListShowUpdateEven.ExpireMessage(System.String,System.String)">
+            <summary>
+            订单过期消息
+            </summary>
+            <param name="orderId"></param>
+            <param name="_hostname"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.RebateService.GetRebateCodeTemplate(System.String,System.Int64)">
+            <summary>
+            获取优惠码信息
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.Id">
+            <summary>
+            行程id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.UsrId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.Spoint">
+            <summary>
+            出发地名称
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.SpointLocation">
+            <summary>
+            出发地经纬度
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.Spointid">
+            <summary>
+            出发地的高德Id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.Epoint">
+            <summary>
+            目的地名称
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.EpointLocation">
+            <summary>
+            终点地经纬度
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.EpointId">
+            <summary>
+            终点的高德Id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.BoardTime">
+            <summary>
+            出发时间
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.Ctime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.Phone">
+            <summary>
+            联系电话
+            </summary>
+            
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.Num">
+            <summary>
+            乘客数量
+            </summary>
+            
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.StartDistance">
+            <summary>
+            起点与起点的距离
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchDriverResult.EndDistance">
+            <summary>
+            终点与终点的距离
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.Id">
+            <summary>
+            行程id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.UsrId">
+            <summary>
+            用户id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.Spoint">
+            <summary>
+            出发地名称
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.SpointLocation">
+            <summary>
+            出发地经纬度
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.Spointid">
+            <summary>
+            出发地的高德Id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.Epoint">
+            <summary>
+            目的地名称
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.EpointLocation">
+            <summary>
+            终点地经纬度
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.EpointId">
+            <summary>
+            终点的高德Id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.BoardTime">
+            <summary>
+            出发时间
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.Status">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.Ctime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.Phone">
+            <summary>
+            联系电话
+            </summary>
+            
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.Num">
+            <summary>
+            乘客数量
+            </summary>
+            
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.StartDistance">
+            <summary>
+            起点与起点的距离
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.QueryService.MatchPassengerResult.EndDistance">
+            <summary>
+            终点与终点的距离
+            </summary>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.TransportService.GetNearestStartPoints(System.Nullable{System.Double},System.Nullable{System.Double})">
+            <summary>
+            获取到最近的上车点
+            </summary>
+            <param name="repository"></param>
+            <param name="redis"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.TransportService.GetChildArea(System.Int32)">
+            <summary>
+            获取父Id下的中国行政区域
+            </summary>
+            <param name="parentid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Shop.Weixin.QueryService.TransportService.GetUserRelevant(System.Int64)">
+            <summary>
+            获取用户相关的历史乘客信息和优惠
+            </summary>
+            <param name="passengerRepository"></param>
+            <param name="rebateRepository"></param>
+            <param name="redis"></param>
+            <param name="usrid"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
