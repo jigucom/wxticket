@@ -44,5 +44,11 @@
     "AutoCloseConnection": true,
     "AutomaticRecovery": true,
     "TopologyRecovery": true
+  },
+  "WXPaySet": {
+    "AppId": "wxe0aa343bc950c2be",
+    "MchId": "1440390902",
+    "SignKey": "qHaJilicCLcFisWNWfl815N8YvCTSOHE",
+    "Notify": "https://app.samecity.com.cn/api/Test/Notify"
   }
 }

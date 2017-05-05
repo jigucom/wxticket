@@ -983,6 +983,81 @@
             展示的id
             </summary>
         </member>
+        <member name="P:Shop.Weixin.Domain.JsApiRequest.appId">
+            <summary>
+            应用APPID
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.JsApiRequest.nonceStr">
+            <summary>
+            随机字符串
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.JsApiRequest.prepayId">
+            <summary>
+            预支付交易会话标识
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.JsApiRequest.signType">
+            <summary>
+            签名类型 ，如“MD5”
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.JsApiRequest.paySign">
+            <summary>
+            支付签名
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.JsApiRequest.partnerId">
+            <summary>
+            商户id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.JsApiRequest.callBackUrl">
+            <summary>
+            支付回调url
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.JsApiForm.OrderNo">
+            <summary>
+            内部订单号码
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.JsApiForm.BodyStr">
+            <summary>
+            显示的内容，如xx商品1件
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.JsApiForm.Price">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.JsApiForm.UserIp">
+            <summary>
+            用户ip地址
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.WXPaySet.AppId">
+            <summary>
+            分配的应用id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.WXPaySet.MchId">
+            <summary>
+            商户id
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.WXPaySet.SignKey">
+            <summary>
+            签名需要的key
+            </summary>
+        </member>
+        <member name="P:Shop.Weixin.Domain.WXPaySet.Notify">
+            <summary>
+            接收财付通通知的URL
+            </summary>
+        </member>
         <member name="P:Shop.Weixin.Domain.RawRabbit.PendingOrderRequest.Id">
             <summary>
             订单号

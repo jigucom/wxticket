@@ -254,6 +254,13 @@
             <param name="vieworderRe"></param>
             <returns></returns>
         </member>
+        <member name="M:Shop.Weixin.QueryService.OrderService.CreateJsApiRequest(Shop.Weixin.Domain.JsApiForm,Shop.Weixin.Domain.WXPaySet)">
+            <summary>
+            app调起支付参数
+            </summary>
+            <param name="from"></param>
+            <returns></returns>
+        </member>
         <member name="M:Shop.Weixin.QueryService.ListShowUpdateEven.ExpireMessage(System.String,System.String)">
             <summary>
             订单过期消息
